@@ -33,4 +33,5 @@ public interface TaskExecutor {
      */
     Long getExecData(String jobName);
 
+    void executeTask(Long taskId);
 }

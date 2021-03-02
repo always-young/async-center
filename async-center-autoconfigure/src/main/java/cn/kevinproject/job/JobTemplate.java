@@ -10,4 +10,9 @@ public interface JobTemplate {
      * @return jobName
      */
     String getJobName();
+
+    /**
+     * 执行job
+     */
+    void execute();
 }

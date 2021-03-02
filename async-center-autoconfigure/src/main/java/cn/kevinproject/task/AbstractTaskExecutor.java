@@ -2,6 +2,7 @@ package cn.kevinproject.task;
 
 import com.google.common.collect.Maps;
 
+import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Queue;
@@ -19,6 +20,13 @@ public abstract class AbstractTaskExecutor implements TaskExecutor{
      * @return queue
      */
     public abstract Queue<Long> initQueue(String jobName);
+
+    @PostConstruct
+    public void init() {
+        doInit();
+    }
+
+    protected abstract void doInit();
 
     @Override
     public Queue<Long> getTaskExecutorQueue(String jobName) {
